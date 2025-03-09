@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>漢字テスト</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-size: 2.5rem;
+        }
+        .kanji-container {
+            font-size: 8rem;
+            margin-bottom: 30px;
+        }
+        .buttons {
+            display: flex;
+            flex-direction: column;
+        }
+        button {
+            margin: 15px;
+            padding: 15px 30px;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="kanji-container" id="kanji">漢</div>
+    <div id="reading" style="display: none; font-size: 1.5rem;">かん (Chinese)</div>
+    <div class="buttons">
+        <button onclick="showReading()">뜻과 읽기</button>
+        <button onclick="nextKanji()">다음</button>
+    </div>
+    
+    <script>
+        let kanjiList = [
+            { kanji: "愛", reading: "あい", meaning: "사랑,애정" },
+            { kanji: "合図", reading: "あいず", meaning: "신호" },
+            { kanji: "相手", reading: "あいて", meaning: "상대,상대방" },
+            { kanji: "愛用者", reading: "あいようしゃ", meaning: "애용자" },
+            { kanji: "赤ん坊", reading: "あかんぼう", meaning: "갓난아기,아기" },
+            { kanji: "空き地", reading: "あきち", meaning: "공터" },
+            { kanji: "握手", reading: "あくしゅ", meaning: "악수" },
+            { kanji: "あくび", reading: "あくび", meaning: "하품" },
+            { kanji: "朝日", reading: "あさひ", meaning: "아침 해" },
+            { kanji: "足跡", reading: "あしあと", meaning: "발자국" },
+            { kanji: "味見", reading: "あじみ", meaning: "맛봄,간 보기" },
+            { kanji: "足元", reading: "あしもと", meaning: "발밑" },
+            { kanji: "汗", reading: "あせ", meaning: "땀" },
+            { kanji: "当たり前", reading: "あたりまえ", meaning: "당연" },
+            { kanji: "悪化", reading: "あっか", meaning: "악화" },
+            { kanji: "集まり", reading: "あつまり", meaning: "모임" },
+            { kanji: "あて先", reading: "あてさき", meaning: "수신자,수신인,수신처" },
+            { kanji: "穴", reading: "あな", meaning: "구멍" },
+        ];
+        let currentIndex = Math.floor(Math.random() * kanjiList.length);  // ランダムに初期漢字を設定
+        
+        function showReading() {
+            document.getElementById("reading").style.display = "block";
+            document.getElementById("reading").innerText = kanjiList[currentIndex].reading + " (" + kanjiList[currentIndex].meaning + ")";
+        }
+        
+        function nextKanji() {
+            // ランダムなインデックスを生成
+            currentIndex = Math.floor(Math.random() * kanjiList.length);
+            document.getElementById("kanji").innerText = kanjiList[currentIndex].kanji;
+            document.getElementById("reading").style.display = "none";
+        }
+    </script>
+</body>
+</html>
