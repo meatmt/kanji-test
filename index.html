@@ -26,6 +26,45 @@
             padding: 15px 30px;
             font-size: 2rem;
         }
+
+        /* スマホサイズの画面用 */
+        @media screen and (max-width: 600px) {
+            body {
+                font-size: 1.5rem;  /* スマホ用の小さい文字サイズ */
+            }
+            .kanji-container {
+                font-size: 5rem;  /* スマホ用の小さい漢字サイズ */
+            }
+            button {
+                font-size: 1.5rem;  /* スマホ用の小さいボタンサイズ */
+            }
+        }
+
+        /* タブレットや小さめのPC画面用 */
+        @media screen and (min-width: 601px) and (max-width: 1024px) {
+            body {
+                font-size: 2rem;  /* タブレットや小さめのPC画面用の文字サイズ */
+            }
+            .kanji-container {
+                font-size: 6rem;  /* タブレットや小さめのPC画面用の漢字サイズ */
+            }
+            button {
+                font-size: 1.8rem;  /* タブレットや小さめのPC画面用のボタンサイズ */
+            }
+        }
+
+        /* 大きなPC画面用 */
+        @media screen and (min-width: 1025px) {
+            body {
+                font-size: 2.5rem;  /* 大きなPC画面用の文字サイズ */
+            }
+            .kanji-container {
+                font-size: 8rem;  /* 大きなPC画面用の漢字サイズ */
+            }
+            button {
+                font-size: 2rem;  /* 大きなPC画面用のボタンサイズ */
+            }
+        }
     </style>
 </head>
 <body>
