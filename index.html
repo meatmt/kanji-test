@@ -68,8 +68,8 @@
     </style>
 </head>
 <body>
-    <div class="kanji-container" id="kanji">漢</div>
-    <div id="reading" style="display: none; font-size: 1.5rem;">かん(Chinese)</div>
+    <div class="kanji-container" id="kanji"></div>
+    <div id="reading" style="display: none; font-size: 1.5rem;"></div>
     <div class="buttons">
         <button onclick="showReading()">뜻과 읽기</button>
         <button onclick="nextKanji()">다음</button>
@@ -96,7 +96,7 @@
             { kanji: "あて先", reading: "あてさき", meaning: "수신자,수신인,수신처" },
             { kanji: "穴", reading: "あな", meaning: "구멍" },
         ];
-        let currentIndex = Math.floor(Math.random() * kanjiList.length);  // ランダムに初期漢字を設定
+        let currentIndex;
         
         function showReading() {
             document.getElementById("reading").style.display = "block";
