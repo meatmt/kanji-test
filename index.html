@@ -68,6 +68,8 @@
     </style>
 </head>
 <body>
+    <input type="text" id="searchInput" placeholder="検索..." oninput="searchKanji()" style="font-size: 2rem; padding: 10px; width: 80%;">
+<div id="searchResults"></div>
     <div class="kanji-container" id="kanji">N3</div>
     <div id="reading" style="display: none; font-size: 1.5rem;"></div>
     <div class="buttons">
@@ -297,6 +299,40 @@
             document.getElementById("kanji").innerText = kanjiList[currentIndex].kanji;
             document.getElementById("reading").style.display = "none";
         }
+    </script>
+    <script>
+        function searchKanji() {
+    let query = document.getElementById("searchInput").value.trim();
+    let resultsDiv = document.getElementById("searchResults");
+    resultsDiv.innerHTML = ""; // 検索結果をクリア
+
+    if (query === "") return; // 空白なら検索しない
+
+    let results = kanjiList.filter(item =>
+        item.kanji.includes(query) ||
+        item.reading.includes(query) ||
+        item.meaning.includes(query)
+    );
+
+    if (results.length === 0) {
+        resultsDiv.innerHTML = "<p>該当なし</p>";
+    } else {
+        results.forEach(item => {
+            let resultItem = document.createElement("div");
+            resultItem.innerHTML = `<strong>${item.kanji}</strong> (${item.reading}): ${item.meaning}`;
+            resultItem.style.cursor = "pointer";
+            resultItem.onclick = () => showKanji(item);
+            resultsDiv.appendChild(resultItem);
+        });
+    }
+}
+
+function showKanji(item) {
+    document.getElementById("kanji").textContent = item.kanji;
+    document.getElementById("reading").textContent = `${item.reading} - ${item.meaning}`;
+    document.getElementById("reading").style.display = "block";
+}
+
     </script>
 </body>
 </html>
