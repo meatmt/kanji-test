@@ -70,6 +70,16 @@
                 font-size: 2rem;  /* 大きなPC画面用のボタンサイズ */
             }
         }
+        #searchResults {
+            max-height: 300px; /* 結果が多くなったら高さを制限 */
+            overflow-y: auto; /* スクロールを有効に */
+            margin-bottom: 30px;
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
     </style>
 </head>
 <body>
