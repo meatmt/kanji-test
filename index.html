@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>漢字テスト</title>
     <style>
+        html, body {
+            height: 100%; /* ページ全体が高さ100%になるように */
+            margin: 0; /* デフォルトのマージンを削除 */
+        }
         body {
             display: flex;
             justify-content: center;
@@ -12,6 +16,7 @@
             height: 100vh;
             flex-direction: column;
             font-size: 2.5rem;
+            overflow-y: auto;
         }
         .kanji-container {
             font-size: 8rem;
