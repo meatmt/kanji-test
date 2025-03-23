@@ -80,25 +80,6 @@
             border-radius: 5px;
             background-color: #f9f9f9;
         }
-        /* 左下の画像 */
-        #left-image {
-            position: fixed;
-            left: 20px;
-            bottom: 20px;
-            width: 300px; /* 大きさを調整 */
-            height: auto;
-            z-index: 1000; /* 他の要素の後ろに隠れないようにする */
-        }
-
-        /* 右下の画像 */
-        #right-image {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            width: 300px; /* 大きさを調整 */
-            height: auto;
-            z-index: 1000; /* 他の要素の後ろに隠れないようにする */
-        }
     </style>
 </head>
 <body>
@@ -110,11 +91,6 @@
         <button onclick="showReading()">뜻과 읽기</button>
         <button onclick="nextKanji()">다음</button>
     </div>
-    <!-- 左下の画像 -->
-    <img id="left-image" src="kanji_test/S__113221639.jpg" alt="Left Image">
-
-    <!-- 右下の画像 -->
-    <img id="right-image" src="kanji_test/スクリーンショット 2025-03-23 191817.png" alt="Right Image">
     
     <script>
         let kanjiList = [
