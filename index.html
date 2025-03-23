@@ -80,22 +80,20 @@
             border-radius: 5px;
             background-color: #f9f9f9;
         }
-        /* 画像の配置 */
-        .image-container {
-            position: absolute;
-            bottom: 20px;
-        }
-
+        /* 左下の画像 */
         #left-image {
-            left: 20px; /* 左下 */
-            width: 100px;
-            height: 100px;
+            position: fixed; /* 画面の左下に固定 */
+            left: 20px;
+            bottom: 20px;
+            width: 120px; /* サイズを調整 */
         }
 
+        /* 右下の画像 */
         #right-image {
-            right: 20px; /* 右下 */
-            width: 100px;
-            height: 100px;
+            position: fixed; /* 画面の右下に固定 */
+            right: 20px;
+            bottom: 20px;
+            width: 120px; /* サイズを調整 */
         }
     </style>
 </head>
