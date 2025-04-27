@@ -19,8 +19,13 @@
             overflow-y: auto;
         }
         .kanji-container {
-            font-size: 8rem;
+            font-size: 2rem;
             margin-bottom: 30px;
+            min-height: 150px; /* ここを追加：高さをある程度確保 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
         .buttons {
             display: flex;
@@ -34,16 +39,10 @@
 
         /* スマホサイズの画面用 */
         @media screen and (max-width: 600px) {
-            body {
-                font-size: 1.5rem;  /* スマホ用の小さい文字サイズ */
-            }
-            .kanji-container {
-                font-size: 5rem;  /* スマホ用の小さい漢字サイズ */
-            }
-            button {
-                font-size: 1.5rem;  /* スマホ用の小さいボタンサイズ */
-            }
-        }
+    .kanji-container {
+        min-height: 100px; /* スマホは少し小さめ */
+    }
+}
 
         /* タブレットや小さめのPC画面用 */
         @media screen and (min-width: 601px) and (max-width: 1024px) {
@@ -93,8 +92,10 @@
 <body>
     <input type="text" id="searchInput" placeholder="検索..." oninput="searchKanji()" style="font-size: 2rem; padding: 10px; width: 80%;">
 <div id="searchResults"></div>
-    <div class="kanji-container" id="kanji">N3</div>
-    <div id="reading" style="display: none; font-size: 1.5rem;"></div>
+    <div class="kanji-area">
+        <div class="kanji-container" id="kanji">N3</div>
+        <div id="reading" style="display: none; font-size: 1.5rem;"></div>
+    </div>
     <div class="buttons">
         <button onclick="showReading()">뜻과 읽기</button>
         <button onclick="nextKanji()">다음</button>
