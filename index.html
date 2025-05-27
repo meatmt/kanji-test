@@ -46,11 +46,33 @@
         }
 
         /* スマホサイズの画面用 */
-        @media screen and (max-width: 600px) {
+        /*@media screen and (max-width: 600px) {
     .kanji-container {
-        min-height: 100px; /* スマホは少し小さめ */
+        min-height: 100px; /* スマホは少し小さめ 
     }
 }
+        /* スマホサイズの画面用 */
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 1.5rem; /* スマホ用文字サイズを小さめに */
+    }
+    .kanji-container {
+        font-size: 4rem; /* スマホ用の漢字サイズ */
+    }
+    button {
+        font-size: 1.2rem; /* スマホ用のボタン文字サイズ */
+    }
+    #reading {
+        font-size: 1.2rem; /* スマホ用の読み表示サイズ */
+    }
+    #searchInput {
+        font-size: 1.2rem; /* 検索ボックスの文字サイズ */
+    }
+    #searchResults {
+        font-size: 1rem; /* 検索結果の文字サイズ */
+    }
+}
+
 
         /* タブレットや小さめのPC画面用 */
         @media screen and (min-width: 601px) and (max-width: 1024px) {
